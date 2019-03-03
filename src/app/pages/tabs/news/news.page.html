@@ -24,7 +24,7 @@
     </ion-toolbar> -->
 </ion-header>
 
-<ion-content padding>
+<ion-content>
     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
         <ion-refresher-content [style.background-color]="'white'" pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingText="Refreshing...">
         </ion-refresher-content>
@@ -38,10 +38,8 @@
             </ion-thumbnail>
 
             <ion-label text-wrap>
-                <ion-text color="danger">
-                    <h3>{{item.time}}</h3>
-                </ion-text>
-                <h3>{{item.title}}</h3>
+                <h3 class="time">{{item.time | date:'d MMM, H:mm'}}</h3>
+                <h3 class="title">{{item.title}}</h3>
             </ion-label>
         </ion-item>
     </ion-list>

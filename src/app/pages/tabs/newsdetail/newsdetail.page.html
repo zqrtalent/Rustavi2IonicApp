@@ -8,18 +8,21 @@
 </ion-header>
 
 <!-- Custom Refresher Content -->
-<ion-content padding>
+<ion-content>
 
     <ion-thumbnail>
         <ion-img class="news_cover_image" [src]="newsDetail.coverImageUrl"></ion-img>
     </ion-thumbnail>
 
-    <h3 class="newsTitle">{{newsDetail.title}}</h3>
+    <div class="news_detail_content">
+        <h3 class="newsTitle">{{newsDetail.title}}</h3>
 
-    <ion-text color="danger">
-        <h3>{{newsDetail.time}}</h3>
-    </ion-text>
+        <ion-text>
+            <h3>{{newsDetail.time | date:'d MMM, H:mm'}}</h3>
+        </ion-text>
 
-    <div class="newsStory" [innerHtml]="newsDetail.storyDetailHtml">
+        <div class="newsStory" [innerHtml]="newsDetail.storyDetailHtml">
+        </div>
     </div>
+
 </ion-content>
