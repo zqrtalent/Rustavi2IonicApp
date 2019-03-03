@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button [text]="'News'"></ion-back-button>
+        </ion-buttons>
+        <ion-title text-center dark>{{newsDetail.title}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<!-- Custom Refresher Content -->
+<ion-content padding>
+
+    <ion-thumbnail>
+        <ion-img class="news_cover_image" [src]="newsDetail.coverImageUrl"></ion-img>
+    </ion-thumbnail>
+
+    <h3 class="newsTitle">{{newsDetail.title}}</h3>
+
+    <ion-text color="danger">
+        <h3>{{newsDetail.time}}</h3>
+    </ion-text>
+
+    <div class="newsStory" [innerHtml]="newsDetail.storyDetailHtml">
+    </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title text-center dark>Shows</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content [style.background-color]="'white'" pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-card class="show_item" button *ngFor="let item of (results | async)" (click)="onShowDetail(item.name)">
+        <ion-card-content no-padding>
+            <ion-img [src]="item.coverImageUrl"></ion-img>
+            <ion-text text-center dark>{{item.name}}</ion-text>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

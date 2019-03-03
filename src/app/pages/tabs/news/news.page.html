@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title text-center>News</ion-title>
+    </ion-toolbar>
+
+    <!-- <ion-toolbar color="primary">
+        <ion-buttons slot="secondary">
+            <ion-button>
+                <ion-icon slot="icon-only" name="contact"></ion-icon>
+            </ion-button>
+            <ion-button>
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="primary">
+            <ion-button color="primary">
+                <ion-icon slot="icon-only" name="more"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Secondary Toolbar</ion-title>
+    </ion-toolbar> -->
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content [style.background-color]="'white'" pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <!-- [routerLink]="['/', 'news', item.id]" routerDirection="forward"  -->
+    <ion-list>
+        <ion-item class="news_item" button *ngFor="let item of (results | async)" (click)="onNewsDetail(item.id)" detail>
+            <ion-thumbnail slot="start">
+                <ion-img class="news_cover_image" [src]="item.coverImageUrl"></ion-img>
+            </ion-thumbnail>
+
+            <ion-label text-wrap>
+                <ion-text color="danger">
+                    <h3>{{item.time}}</h3>
+                </ion-text>
+                <h3>{{item.title}}</h3>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

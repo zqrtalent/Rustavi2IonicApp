@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button [text]="'Shows'"></ion-back-button>
+        </ion-buttons>
+        <ion-title text-center dark>{{title}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content [style.background-color]="'white'" pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+</ion-content>
