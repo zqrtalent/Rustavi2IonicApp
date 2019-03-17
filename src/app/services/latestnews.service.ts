@@ -11,8 +11,8 @@ export class LatestnewsService {
 
   constructor( private http: HttpClient ) { }
 
-  private urlLatestNews: string = 'http://localhost:5000/api/news/latest'
-  private urlNewsDetail: string = 'http://localhost:5000/api/news/'
+  private urlLatestNews: string = 'https://rustavi2webapi.herokuapp.com/api/v1/news/latest'
+  private urlNewsDetail: string = 'https://rustavi2webapi.herokuapp.com/api/v1/news/'
 
   getLatestNews(): Observable<any> {
     return this.http.get(this.urlLatestNews)

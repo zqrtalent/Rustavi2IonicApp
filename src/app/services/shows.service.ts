@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class ShowsService {
   constructor( private http: HttpClient ) { }
 
-  private urlShows: string = 'http://localhost:5000/api/shows/'
+  private urlShows: string = 'https://rustavi2webapi.herokuapp.com/api/v1/shows/'
 
   getShows(): Observable<any> {
     return this.http.get(this.urlShows)

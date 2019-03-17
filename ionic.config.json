@@ -1,5 +1,7 @@
 {
-  "name": "rustavi2App",
-  "integrations": {},
-  "type": "angular"
+    "name": "rustavi2App",
+    "integrations": {
+        "cordova": {}
+    },
+    "type": "angular"
 }
